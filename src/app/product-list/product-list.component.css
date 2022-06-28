@@ -1,0 +1,30 @@
+
+
+
+.flex-countainer{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+
+}
+.products-box{
+    color: red;
+    width: 300px;
+    display: inline;
+    justify-content: center;
+    margin: 15px;
+    padding: 20px;
+    border:5px solid #ccc;border-radius: 10px;
+}
+
+
+.box-link{
+    display: flex;
+    width: 110px;
+    justify-content: center;
+    border: #d0d9e0  solid 1px;
+    background-color: #00F0FF;
+    text-decoration: none;
+    border-radius: 2px;
+ 
+}

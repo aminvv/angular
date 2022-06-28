@@ -1,0 +1,20 @@
+<!-- <h1>product-deatails</h1>
+<div class="flex-countainer">
+<app-products-deatails *ngFor="let pro of productds"[item]='pro'></app-products-deatails>
+</div> 
+<h1>product-list works!</h1> -->
+
+
+<div class="flex-countainer">
+<div class="products-box" *ngFor="let item of products">
+    <h3>{{item.title}}</h3>
+    <a class="box-link"  [routerLink]="['/products',item.id]" >view Info</a>
+    <a class="box-link" [routerLink]="['/products/info']" [queryParams]="{id:item.id,title:item.title}">view Info with Queery string</a>
+    <button class="box-link" (click)="gotoProducts(item)"> query params ts</button>
+    <button class="box-link" (click)="delete(item.id)"> Remove Item</button>
+</div>  
+</div>
+<hr>
+<app-products-deatails *ngFor="let rating of ratings"[rating]=rating (starClick)="onclickStar($event)" (remove)="delete($event)" ></app-products-deatails>
+
+ 

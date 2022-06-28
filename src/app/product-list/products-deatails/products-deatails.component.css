@@ -1,0 +1,46 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.flex-countainer{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+
+}
+
+
+.products-box{
+    color: red;
+    width: 300px;
+    justify-content: center;
+    margin: 15px;
+    padding: 20px;
+    border:5px solid #ccc;border-radius: 10px;
+}
+
+
+.box-link{
+    display: flex;
+    flex-direction: row;
+    width: 110px;
+    justify-content: center;
+    border: #d0d9e0  solid 1px;
+    background-color: #00F0FF;
+    text-decoration: none;
+    border-radius: 2px;
+
+}
+.crop{
+overflow:hidden;
+
+}
+.star{
+    width: 72px;
+    color: rgb(255, 217, 0);
+}
