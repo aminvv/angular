@@ -6,7 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,                                     //  or  code button   = false
-    "noImplicitAny": false ,                            // for fix error error 'any'
+    "noImplicitAny": false,                            // for fix error error 'any'
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": false,        // for fix error ['']
     "noImplicitReturns": true,
@@ -19,7 +19,7 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
-    "strictPropertyInitialization": false,              //for fix error veiwChild of type component
+    "strictPropertyInitialization": false,              //for fix error veiwChild of type component  ElementRef<any>
     "lib": [
       "es2020",
       "dom"

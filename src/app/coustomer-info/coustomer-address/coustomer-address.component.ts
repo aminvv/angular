@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, Renderer2, ViewChildren, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-coustomer-address',
@@ -6,11 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coustomer-address.component.css']
 })
 export class CoustomerAddressComponent implements OnInit {
-  homeAddress:string="urmia";
-  nativeElement: any;
-  constructor() { }
+
+  textarea:string="england:"
+  @ViewChild('textBox')add:ElementRef
+  constructor(private randerer: Renderer2) { }
 
   ngOnInit(): void {
+    this.randerer.createText=this.add.nativeElement.value
+
   }
+
+
+
+
 
 }

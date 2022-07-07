@@ -1,0 +1,28 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borderbox {
+    margin-top: 10px;
+    width: 207px;
+    height: 30px;
+    background-color: aquamarine;
+    border: solid rgb(192, 191, 191) 0.3px ;
+    border-radius: 3px;
+}
+
+
+.text{
+    margin-left: 200px;
+    margin-top: 80px;
+font-size: 2rem;
+color: brown;
+}

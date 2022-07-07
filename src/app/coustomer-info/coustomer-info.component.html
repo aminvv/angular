@@ -1,9 +1,29 @@
-<h1>Coustomer Info </h1>
-<div>
-<label >First Name: </label> <input #firstname type="text">
+<div class="flex">
+    <div class="form-group">
+        <label> FIRST NAME :
+            <input  #name  class="form-control"  (keyup)="onkeyup($event)" type="text">
+        </label>
 
-<app-coustomer-address  #homeaddress >
-</app-coustomer-address>
+        <div class="borderbox">
+            <p >{{text}}</p>
+        </div>
+
+    </div>
+    <!-- <button class="btn btn-success" (click)="save()">Transfer</button> -->
+
+</div>
+
+<hr>
+
+<app-coustomer-address  ></app-coustomer-address>
+
+
 <br>
-<button class="btn btn-success" (click)="save()"save info> save</button>
+<div class="form-group">
+<button (click)="transfer($event)" class="form-control">Transfer</button>
+</div>
+
+
+<div class="text" >
+    <p [style]="textStyle ?'font-size3':'font-size:5rem'" [style.text-decoration]="">Atribute binding Test</p>
 </div>

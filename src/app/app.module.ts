@@ -12,6 +12,8 @@ import { ColorsComponent } from './category-list/colors/colors.component';
 import { ProductsDeatailsComponent } from './product-list/products-deatails/products-deatails.component';
 import { CoustomerInfoComponent } from './coustomer-info/coustomer-info.component';
 import { CoustomerAddressComponent } from './coustomer-info/coustomer-address/coustomer-address.component';
+import { CarsComponent } from './category-list/cars/cars.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,10 +28,12 @@ import { CoustomerAddressComponent } from './coustomer-info/coustomer-address/co
     ProductsDeatailsComponent,
     CoustomerInfoComponent,
     CoustomerAddressComponent,
+    CarsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
