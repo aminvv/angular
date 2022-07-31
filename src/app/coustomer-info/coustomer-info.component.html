@@ -9,12 +9,14 @@
         </div>
 
     </div>
-    <!-- <button class="btn btn-success" (click)="save()">Transfer</button> -->
 
 </div>
 
 <hr>
 
+<app-coustomer-address  #textBox></app-coustomer-address>
+<app-coustomer-address  ></app-coustomer-address>
+<app-coustomer-address  ></app-coustomer-address>
 <app-coustomer-address  ></app-coustomer-address>
 
 
@@ -25,5 +27,12 @@
 
 
 <div class="text" >
-    <p [style]="textStyle ?'font-size3':'font-size:5rem'" [style.text-decoration]="">Atribute binding Test</p>
+    <p [style.font-size.rem]="textStyles ?3:8">Atribute binding Test</p>
+</div>
+<div>
+    <p [class]="textStyles ? 'small-font-size':'big-font-size'">Test </p>
+</div>
+
+<div>
+    <p [class]="classes">Test Class</p>
 </div>

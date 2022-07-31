@@ -1,0 +1,13 @@
+[1mdiff --git a/src/app/coustomer-info/coustomer-info.component.ts b/src/app/coustomer-info/coustomer-info.component.ts[m
+[1mindex 7b3e6b4..abab26d 100644[m
+[1m--- a/src/app/coustomer-info/coustomer-info.component.ts[m
+[1m+++ b/src/app/coustomer-info/coustomer-info.component.ts[m
+[36m@@ -19,7 +19,7 @@[m [mexport class CoustomerInfoComponent implements OnInit, AfterViewInit {[m
+ [m
+ [m
+   ngOnInit(): void {[m
+[31m-    console.log("log" + this.text);[m
+[32m+[m[32m    console.log("log aa" + this.text);[m
+ [m
+ [m
+   }[m

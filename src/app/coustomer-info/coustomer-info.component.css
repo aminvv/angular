@@ -26,3 +26,17 @@ body {
 font-size: 2rem;
 color: brown;
 }
+
+.big-font-size{
+    font-size: 10rem;
+    color: blueviolet;
+}
+
+.small-font-size{
+font-size: 2rem;
+color: aqua;
+}
+
+.color-text{
+    color: blue;
+}
