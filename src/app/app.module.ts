@@ -14,8 +14,10 @@ import { CoustomerInfoComponent } from './coustomer-info/coustomer-info.componen
 import { CoustomerAddressComponent } from './coustomer-info/coustomer-address/coustomer-address.component';
 import { CarsComponent } from './category-list/cars/cars.component';
 import { FormsModule } from '@angular/forms';
-import { UsersComponent } from './test-service/users/users.component';
-import { UserComponent } from './test-service/users/user/user.component';
+import { HomeServiceComponent } from './Test-service/home-service/home-service.component';
+import { UsersComponent } from './Test-service/users/users.component';
+import { UserComponent } from './Test-service/users/user/user.component';
+
 
 
 @NgModule({
@@ -31,8 +33,10 @@ import { UserComponent } from './test-service/users/user/user.component';
     CoustomerInfoComponent,
     CoustomerAddressComponent,
     CarsComponent,
+    HomeServiceComponent,
     UsersComponent,
     UserComponent,
+ 
   ],
   imports: [
     BrowserModule,

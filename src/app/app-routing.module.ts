@@ -9,22 +9,40 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductInfoComponent } from './product-list/product-info/product-info.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { HomeServiceComponent } from './Test-service/home-service/home-service.component';
+import { UserComponent } from './Test-service/users/user/user.component';
+import { UsersComponent } from './Test-service/users/users.component';
 
 const routes: Routes = [
-  {path:"",component:HomeComponent},
-  {path:"products",component:ProductListComponent},
-  {path:"products/:id",component:ProductInfoComponent},
-  {path:"products/info",component:ProductInfoComponent},
 
-  {path:"category",component:CategoryListComponent,
-         children:[
-         {path:'features',component:FeautersComponent},
-         {path:'colors',component:ColorsComponent},
-         {path:'',redirectTo:'features',pathMatch:'full'}
-  ]},
-  {path:"coustomer/info",component:CoustomerInfoComponent},
-  {path:"coustomer/address",component:CoustomerAddressComponent},
-  {path:'**',component:PageNotFoundComponent},
+
+
+  { path: "products", component: ProductListComponent },
+  {
+    path: "", component: HomeComponent,
+    children: [
+      { path: 'HomeService', component: HomeServiceComponent },
+      { path: 'users', component: UsersComponent },
+      { path: 'user', component: UserComponent },
+    ]
+  },
+  { path: "products/:id", component: ProductInfoComponent },
+  { path: "products/info", component: ProductInfoComponent },
+
+
+
+  {
+    path: "category", component: CategoryListComponent,
+    children: [
+      { path: 'features', component: FeautersComponent },
+      { path: 'colors', component: ColorsComponent },
+      { path: '', redirectTo: 'features', pathMatch: 'full' }
+    ]
+  },
+  { path: "coustomer/info", component: CoustomerInfoComponent },
+  { path: "coustomer/address", component: CoustomerAddressComponent },
+  { path: '**', component: PageNotFoundComponent },
+
 
 ];
 
