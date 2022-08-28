@@ -5,3 +5,8 @@
 
 <a  routerLink="colors" class="category-item" routerLinkActive="category-item-active" > colors </a>
 <router-outlet></router-outlet>
+<ul>
+    <li *ngFor="let item of categoryList">
+        {{item.categoryName+"  "+item.description +"  "+item.categoryId}}
+    </li>
+</ul>
