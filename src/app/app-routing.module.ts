@@ -5,13 +5,14 @@ import { ColorsComponent } from './category-list/colors/colors.component';
 import { FeautersComponent } from './category-list/feauters/feauters.component';
 import { CoustomerAddressComponent } from './coustomer-info/coustomer-address/coustomer-address.component';
 import { CoustomerInfoComponent } from './coustomer-info/coustomer-info.component';
+import { EployeeInfoComponent } from './eployee-info/eployee-info.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductInfoComponent } from './product-list/product-info/product-info.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { HomeServiceComponent } from './Test-service/home-service/home-service.component';
-import { UserComponent } from './Test-service/users/user/user.component';
-import { UsersComponent } from './Test-service/users/users.component';
+import { HomeServiceComponent } from './test-service/home-service/home-service.component'
+import { UserComponent } from './test-service/users/user/user.component';
+import { UsersComponent } from './test-service/users/users.component'
 
 const routes: Routes = [
 
@@ -41,6 +42,7 @@ const routes: Routes = [
   },
   { path: "coustomer/info", component: CoustomerInfoComponent },
   { path: "coustomer/address", component: CoustomerAddressComponent },
+  {path:"employee",component:EployeeInfoComponent},
   { path: '**', component: PageNotFoundComponent },
 
 
