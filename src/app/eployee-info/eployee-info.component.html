@@ -4,27 +4,55 @@
       <div class="card ">
         <div class="card-header">Employee Form</div>
         <div class="card-body">
-          <form #EmployeeForm="ngForm" (ngSubmit)="save(EmployeeForm.value)">
+          <form #EmployeeForm="ngForm" (ngSubmit)="EmployeeForm.form.valid && save(EmployeeForm.value)" novalidate >
             <div class="form-group">
               <label>First Name</label>
-              <input type="text" class="form-control" name="FirstName" ngModel>
+              <input type="text" class="form-control" name="FirstName" ngModel #FirstName="ngModel"
+               [ngClass]="{'is-invalid':EmployeeForm.submitted && FirstName.invalid}"required>
+              <div *ngIf="EmployeeForm.submitted &&FirstName.invalid"required class="invalid-feedback">
+                <div *ngIf="FirstName.errors?.required">First nameis required</div>             
             </div>
+          </div>
             <div class="form-group">
               <label>Last Name</label>
-              <input type="text" class="form-control" name="LastName" ngModel>
+              <input type="text" class="form-control" name="LastName" ngModel #LastName="ngModel"
+              [ngClass]="{'is-invalid':EmployeeForm.submitted && LastName.invalid}" maxlength="5"minlength="3" required>
+              <div *ngIf="EmployeeForm.submitted && LastName.invalid" class="invalid-feedback">
+                <div *ngIf="LastName.errors?.required"> lastname is invalid</div>
+                <div *ngIf="LastName.errors?.maxlength">last name must  be atlaste 5 characters</div>
+                <div *ngIf="LastName.errors?.minlength">last name must  max 3 characters</div>
             </div>
+          </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" class="form-control" name="Email" ngModel>
+              <input type="email" class="form-control" name="Email" ngModel  #Email="ngModel" 
+              [ngClass]="{'is-invalid': EmployeeForm.submitted && Email.invalid}" required email>
+              <div *ngIf="EmployeeForm.submitted && Email.invalid"Class="invalid-feedback">
+                <div *ngIf="Email.errors?.required" >required email </div>
+                <div *ngIf="Email.errors?.email">invalid email </div>
+              </div>
             </div>
             <div class="form-group">
+              <label > Mobile </label>
+              <input type="text" class="form-control" name="Mobile" ngModel #Mobile="ngModel"
+              [ngClass]="{'is-invalid':EmployeeForm.submitted && Mobile.invalid}"  pattern="09\d{9}">
+              <div *ngIf="EmployeeForm.submitted && Mobile.invalid" class="invalid-feedback">
+                <div *ngIf="Mobile.errors?.pattern">invalid number</div>
+              </div>
+            </div>
+
+            <div class="form-group">
               <label>Grade</label>
-              <select class="form-control" name="GradeId" ngModel>
+              <select class="form-control" name="GradeId" ngModel #GradId="ngModel" 
+              [ngClass]="{'is-invalid':EmployeeForm.submitted && GradId.invalid}" required>
                 <option>Select Item</option>
                 <option *ngFor="let item of grade" [value]="item.Id">
                   {{item.title}}
                 </option>
               </select>
+              <div *ngIf="EmployeeForm.submitted && GradId.invalid" class="invalid-feedback" >
+                <div *ngIf="GradId.errors?.required">invalide grade</div>
+              </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
@@ -43,11 +71,15 @@
           </div>
           <div class="form-group">
             <label>Last Name:</label>
-            <label >{{employee.LastName}}</label> 
+            <label>{{employee.LastName}}</label>
           </div>
           <div class="form-group">
             <label>Email:</label>
             <label>{{employee.Email}}</label>
+          </div>
+          <div class="form-group">
+            <label>Mobile:</label>
+            <label>{{employee.Mobile}}</label>
           </div>
           <div class="form-group">
             <label>Grade:</label>

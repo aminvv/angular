@@ -10,7 +10,7 @@ import { GradeService } from '../services/grade.service';
 })
 export class EployeeInfoComponent implements OnInit {
   grade:KeyValue[] 
-  employee:Employee =new Employee(0,"","","",0,"");
+  employee:Employee =new Employee(0,"","","","",0,"");
 
   constructor(private gradeservice:GradeService) { }
 
