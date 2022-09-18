@@ -1,32 +1,36 @@
+
+
 <div class="flex">
     <div class="form-group">
         <label> FIRST NAME :
-            <input  #name  class="form-control"  (keyup)="onkeyup($event)" type="text">
+            <input #name class="form-control" (keyup)="onkeyup($event)" type="text">
         </label>
 
         <div class="borderbox">
-            <p >{{text}}</p>
+            <p>{{text}}</p>
         </div>
 
     </div>
 
 </div>
 
+
 <hr>
 
-<app-coustomer-address  #textBox></app-coustomer-address>
-<app-coustomer-address  ></app-coustomer-address>
-<app-coustomer-address  ></app-coustomer-address>
-<app-coustomer-address  ></app-coustomer-address>
+
+<app-coustomer-address #textBox></app-coustomer-address>
+<app-coustomer-address></app-coustomer-address>
+<app-coustomer-address></app-coustomer-address>
+<app-coustomer-address></app-coustomer-address>
 
 
 <br>
 <div class="form-group">
-<button (click)="transfer($event)" class="form-control">Transfer</button>
+    <button (click)="transfer($event)" class="form-control">Transfer</button>
 </div>
 
 
-<div class="text" >
+<div class="text">
     <p [style.font-size.rem]="textStyles ?3:8">Atribute binding Test</p>
 </div>
 <div>
@@ -36,3 +40,7 @@
 <div>
     <p [class]="classes">Test Class</p>
 </div>
+
+
+
+>

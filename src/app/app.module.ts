@@ -18,8 +18,7 @@ import { HomeServiceComponent } from './test-service/home-service/home-service.c
 import { UsersComponent } from './test-service/users/users.component';
 import { UserComponent } from './test-service/users/user/user.component';
 import { EployeeInfoComponent } from './eployee-info/eployee-info.component';
-
-
+import{ReactiveFormsModule}from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -45,6 +44,8 @@ import { EployeeInfoComponent } from './eployee-info/eployee-info.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    
     
   ],
   providers: [],

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, Vie
 // import { read } from 'fs';
 import { elementAt } from 'rxjs';
 import { CoustomerAddressComponent } from './coustomer-address/coustomer-address.component';
-
+ import { FormGroup,FormControl,FormBuilder  } from '@angular/forms';
 @Component({
   selector: 'app-coustomer-info',
   templateUrl: './coustomer-info.component.html',
@@ -59,6 +59,7 @@ export class CoustomerInfoComponent implements OnInit, AfterViewInit {
   onkeyup(event) {
     this.text = this.Randerer.createText = this.name.nativeElement.value;
   }
+ 
 
 
 
