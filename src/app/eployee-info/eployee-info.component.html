@@ -111,24 +111,38 @@
             <div class="form-group">
               <label>First Name</label>
               <input type="text" class="form-control" name="FirstName" formControlName="FirstName">
+              <div  *ngIf="Coustomer.get('FirstName')?.invalid && Coustomer.get('FirstName')?.touched   ">
+                <span *ngIf="Coustomer.get('FirstName')?.errors?.required"> invalid name </span>
+              </div>
             </div>
 
             <div class="form-group">
               <label>Last Name</label>
               <input type="text" class="form-control" name="LastName" formControlName="LastName" >
+              <div   *ngIf="Coustomer.get('LastName')?.invalid &&Coustomer.get('LastName')?.touched  " >
+                <span *ngIf="Coustomer.get('LastName')?.errors?.required"> invalid name </span>
+                <span *ngIf="Coustomer.get('LastName')?.errors?.maxlength"> max name </span>
+                <span *ngIf="Coustomer.get('LastName')?.errors?.minlength"> min name </span>
+              </div>
             </div>
 
             <div class="form-group">
               <label> Coustomer Code </label>
               <input type="text" class="form-control" name="CoustomerCode"  formControlName="CoustomerCode">
+              <div *ngIf="Coustomer.get('CoustomerCode')?.invalid && Coustomer.get('CoustomerCode')?.invalid">
+                <span *ngIf="Coustomer.get('CoustomerCode')?.errors?.required"> invalid name </span>
+              </div>
             </div>
 
             <div class="form-group">
               <label>Email</label>
               <input type="email" class="form-control" name="Email" formControlName="Email">
+              <div *ngIf="Coustomer.get('Email')?.invalid &&Coustomer.get('Email')?.invalid ">
+                <span *ngIf="Coustomer.get('Email')?.errors?.required"> invalid name </span>
+              </div>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" [disabled]="Coustomer.invalid" class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
