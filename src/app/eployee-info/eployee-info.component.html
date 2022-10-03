@@ -107,19 +107,19 @@
       <div class="card ">
         <div class="card-header">Reactive Forms</div>
         <div class="card-body">
-          <form   [formGroup]="Coustomer" (submit)="savea()">
+          <form [formGroup]="Coustomer" (submit)="savea()">
             <div class="form-group">
               <label>First Name</label>
               <input type="text" class="form-control" name="FirstName" formControlName="FirstName">
-              <div  *ngIf="Coustomer.get('FirstName')?.invalid && Coustomer.get('FirstName')?.touched   ">
+              <div *ngIf="Coustomer.get('FirstName')?.invalid && Coustomer.get('FirstName')?.touched   ">
                 <span *ngIf="Coustomer.get('FirstName')?.errors?.required"> invalid name </span>
               </div>
             </div>
 
             <div class="form-group">
               <label>Last Name</label>
-              <input type="text" class="form-control" name="LastName" formControlName="LastName" >
-              <div   *ngIf="Coustomer.get('LastName')?.invalid &&Coustomer.get('LastName')?.touched  " >
+              <input type="text" class="form-control" name="LastName" formControlName="LastName">
+              <div *ngIf="Coustomer.get('LastName')?.invalid &&Coustomer.get('LastName')?.touched  ">
                 <span *ngIf="Coustomer.get('LastName')?.errors?.required"> invalid name </span>
                 <span *ngIf="Coustomer.get('LastName')?.errors?.maxlength"> max name </span>
                 <span *ngIf="Coustomer.get('LastName')?.errors?.minlength"> min name </span>
@@ -128,8 +128,8 @@
 
             <div class="form-group">
               <label> Coustomer Code </label>
-              <input type="text" class="form-control" name="CoustomerCode"  formControlName="CoustomerCode">
-              <div *ngIf="Coustomer.get('CoustomerCode')?.invalid && Coustomer.get('CoustomerCode')?.invalid">
+              <input type="text" class="form-control" name="CoustomerCode" formControlName="CoustomerCode">
+              <div *ngIf="Coustomer.get('CoustomerCode')?.touched&& Coustomer.get('CoustomerCode')?.invalid">
                 <span *ngIf="Coustomer.get('CoustomerCode')?.errors?.required"> invalid name </span>
               </div>
             </div>
@@ -137,14 +137,97 @@
             <div class="form-group">
               <label>Email</label>
               <input type="email" class="form-control" name="Email" formControlName="Email">
-              <div *ngIf="Coustomer.get('Email')?.invalid &&Coustomer.get('Email')?.invalid ">
+              <div *ngIf="Coustomer.get('Email')?.touched &&Coustomer.get('Email')?.invalid ">
                 <span *ngIf="Coustomer.get('Email')?.errors?.required"> invalid name </span>
               </div>
             </div>
+
+            <fieldset>
+              <legend>Acount Info Form</legend>
+              <div formGroupName="AccountInfoForm">
+                <div class="form-group">
+                  <label>AcountNumber</label>
+                  <input type="text" class="form-control" name="Email" formControlName="AcountNumber">
+                  <div
+                    *ngIf="AccountInfoForm?.get('AcountNumber')?.touched &&AccountInfoForm?.get('AcountNumber')?.invalid ">
+                    <span *ngIf="AccountInfoForm?.get('AcountNumber')?.errors?.required"> invalid name </span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>AcountTitle</label>
+                  <input type="text" class="form-control" name="AcountTitle" formControlName="AcountTitle">
+                  <div
+                    *ngIf="AccountInfoForm?.get('AcountTitle')?.touched&&AccountInfoForm?.get('AcountTitle')?.invalid ">
+                    <span *ngIf="AccountInfoForm?.get('AcountTitle')?.errors?.required"> invalid name </span>
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label>Sheba</label>
+                  <input type="text" class="form-control" name="Sheba" formControlName="Sheba">
+                  <div *ngIf="AccountInfoForm?.get('Sheba')?.touched &&AccountInfoForm?.get('Sheba')?.invalid ">
+                    <span *ngIf="AccountInfoForm?.get('Sheba')?.errors?.required"> invalid name </span>
+                  </div>
+                </div>
+
+
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Address List </legend>
+              <div formArrayName="AddressList">
+                <div *ngFor="let item of addressArray.controls; let i=index">
+                  <div FormGrouplName=i>
+                    <div class="form-group">
+                      <label>type:</label>
+                      <select class="form-control" FormControlName="type">
+                        <option>Select type</option>
+                        <option>Home</option>
+                        <option>Work</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Address:</label>
+                      <textarea class="form-control" FormControlName="address"></textarea>
+                    </div>
+                    <br>
+                    <button class="form-control btn btn-primary" (click)="RemoveAddress($event,i)">Remove</button>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <button class="form-control btn btn-primary" (click)="addNewAddress($event)">AddNewAddress</button>
+            </fieldset>
+
+
             <br>
-            <button type="submit" [disabled]="Coustomer.invalid" class="btn btn-primary">Submit</button>
+            <button type="submit"   class="btn btn-primary">Submit</button>
           </form>
         </div>
       </div>
 
     </div>
+    <Form FormGroup="Coustomer" Submit="onsubmit()" class="form-group">
+      <div class="form-control"  *ngFor="let item of Formtemplate">
+        <label >{{ item.label}}</label>
+        <div [ngSwitch]="item.type" >
+          <div *ngSwitchCase="'textBox'" >
+            <input type="text" class="form-control" formControlName="{{item.label}}"/>
+          </div>
+          <div *ngSwitchCase="'number'" >
+            <input type="number" class="form-control"  formControlName="{{item.label}}"/>
+          </div>
+          <div *ngSwitchCase="'select'" >
+            <select class="form-control"  formControlName="{{item.label}}">
+              <option *ngFor="let itemOpt of item.option">
+                {{itemOpt}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="save">
+    </Form>
